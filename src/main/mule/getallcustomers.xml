@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="getallcustomersImplementation" doc:id="f645adb0-dc13-464b-bb04-607b19eb5da8" >
+		<ee:transform doc:name="Transform Message" doc:id="b2426faa-41a9-4867-8524-cedd386b82eb" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+[{
+  "customerID": "1",
+  "firstName": "Molly",
+  "lastName": "Mule",
+  "displayName": "Molly the Mule",
+  "address": {
+    "addressLine1": "123 Street",
+    "addressLine2": "Apt.#3D",
+    "city": "San Francisco",
+    "state": "California",
+    "zipCode": "94110",
+    "country": "United States"
+  },
+  "phone": "415-000-0000",
+  "email": "molly@mulesoft.com",
+  "ssn": "321-654-0987",
+  "dateOfBirth": "1990-09-04"
+},{
+  "customerID": "2",
+  "firstName": "Molly2",
+  "lastName": "Mule2",
+  "displayName": "Molly the Mule2",
+  "address": {
+    "addressLine1": "123 Street",
+    "addressLine2": "Apt.#3D",
+    "city": "San Francisco",
+    "state": "California",
+    "zipCode": "94110",
+    "country": "United States"
+  },
+  "phone": "415-000-0000",
+  "email": "molly@mulesoft.com",
+  "ssn": "321-654-0987",
+  "dateOfBirth": "1990-09-04"
+}]]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
